@@ -34,7 +34,7 @@ class Product(models.Model):
         null=True,
     )
     created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
 
     class Meta:
         verbose_name = "Продукт"

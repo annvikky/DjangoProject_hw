@@ -1,0 +1,36 @@
+<!--products_list.html-->
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block title %} Список товаров {% endblock title %}
+{% block content %}
+
+<body>
+<div class="container">
+    <div class="row text-center">
+        {% for product in products %}
+        <div class="col-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+
+                    <h4 class="my-0 font-weight-normal">{{ product.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">Цена: {{ product.price }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li> <img src="{{ product.photo | media_filter }}" alt="{{ product.name }}" width=" 200" height=" 200"></li>
+                        <li>- {{ product.description|truncatechars:100 }}</li>
+                        <li>- {{ product.category }}</li>
+                        <li>- {{ product.created_at }}</li>
+                        <li>- {{ product.updated_at }}</li>
+                    </ul>
+                    <a href="product_detail/{{product.pk}}/" class="btn btn-success">Подробнее</a>
+<!--                    <button type="button" class="btn btn-lg btn-block btn-outline-primarÿ">Подробнее</button>-->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+{% endblock content %}

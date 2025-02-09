@@ -1,0 +1,35 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+
+{% block title %}Статьи блога{% endblock title%}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+         <div class="row text-center">
+            <h1 class="mb-4">Список статей</h1>
+                {% for object in articles %}
+                <div class="col-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
+                        </div>
+                        <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                            <li> <img src="{{ object.preview | media_filter }}" width=" 200" height=" 200"></li>
+                            <li>- Дата создания: {{ object.created_at|date:"d M Y" }}</li>
+                            <li>- Количество просмотров: {{ object.counter }}</li>
+                            <a href="/blog/article/{{object.pk}}/" class="btn btn-success">Подробнее</a>
+                            <a href="/blog/article/{{object.pk}}/update" class="btn btn-success">Редактировать</a>
+                            <a href="/blog/article/{{object.pk}}/delete" class="btn btn-success">Удалить</a>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+         </div>
+
+        <p>
+            <a class="btn btn-primary" href="{% url 'blog:article_create'%}" role="button">Добавить статью</a>
+        </p>
+    </div>
+</body>
+{% endblock content %}

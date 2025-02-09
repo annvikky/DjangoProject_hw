@@ -15,13 +15,13 @@
                     <h4 class="my-0 font-weight-normal">Информация о продукте</h4>
                 </div>
                 <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <li> <img src="{{ product.photo | media_filter }}" alt="{{ product.name }}" width=" 400" height=" 400"></li>
-                        <li> Название: {{ product.name }}</li>
-                        <li> Описание: {{ product.description|truncatechars:100 }}</li>
-                        <li> Категория: {{ product.category }}</li>
-                        <li> Стоимость: {{ product.price }}</li>
-                        <li> Дата создания: {{ product.created_at }}</li>
-                        <li> Дата последнего изменения: {{ product.updated_at }}</li>
+                        <li> <img src="{{ object.photo | media_filter }}" alt="{{ object.name }}" width=" 400" height=" 400"></li>
+                        <li> Название: {{ object.name }}</li>
+                        <li> Описание: {{ object.description|truncatechars:100 }}</li>
+                        <li> Категория: {{ object.category }}</li>
+                        <li> Стоимость: {{ object.price }}</li>
+                        <li> Дата создания: {{ object.created_at }}</li>
+                        <li> Дата последнего изменения: {{ object.updated_at }}</li>
                     </ul>
 
                 </div>

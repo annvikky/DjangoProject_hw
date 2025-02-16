@@ -5,6 +5,9 @@
 {% block content %}
 
 <body>
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <a class="btn btn-outline-success" href="{% url 'catalog:product_create'%}" role="button">Добавить товар</a>
+</div>
 <div class="container">
     <div class="row text-center">
         {% for product in object_list %}
@@ -24,6 +27,8 @@
                         <li>- {{ product.updated_at }}</li>
                     </ul>
                     <a href="product_detail/{{product.pk}}/" class="btn btn-success">Подробнее</a>
+                    <a href="product_list/{{product.pk}}/update/" class="btn btn-success">Редактировать</a>
+                    <a href="product_list/{{product.pk}}/delete/" class="btn btn-success">Удалить</a>
                 </div>
             </div>
         </div>

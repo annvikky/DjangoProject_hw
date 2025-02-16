@@ -1,0 +1,28 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+
+{% block title %}Статья блога{% endblock title%}
+
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col-6">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                    <h1 class="mb-4">{{ object.title }}</h1>
+                    </div>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li><img src="{{ object.preview | media_filter }}" width=" 200" height=" 200"></li>
+                        <li>{{ object.content }}</li>
+                        <li>Дата создания: {{ object.created_at|date:"d M Y" }}</li>
+                        <li>Статус публикации: {{ object.is_published }}</li>
+                        <li>Количество просмотров: {{ object.counter }}</li>
+                    </ul>
+                </div>
+                <a href="{% url 'blog:article_list'%}" class="btn btn-success">Назад</a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content%}

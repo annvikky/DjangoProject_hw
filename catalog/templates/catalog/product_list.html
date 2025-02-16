@@ -1,4 +1,4 @@
-<!--products_list.html-->
+<!--product_list.html-->
 {% extends 'catalog/base.html' %}
 {% load my_tags %}
 {% block title %} Список товаров {% endblock title %}
@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <div class="row text-center">
-        {% for product in products %}
+        {% for product in object_list %}
         <div class="col-4">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -24,7 +24,6 @@
                         <li>- {{ product.updated_at }}</li>
                     </ul>
                     <a href="product_detail/{{product.pk}}/" class="btn btn-success">Подробнее</a>
-<!--                    <button type="button" class="btn btn-lg btn-block btn-outline-primarÿ">Подробнее</button>-->
                 </div>
             </div>
         </div>

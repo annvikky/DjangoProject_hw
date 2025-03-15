@@ -1,14 +1,18 @@
-<!--product_list.html-->
+<!--product_by_category_list.html-->
 {% extends 'catalog/base.html' %}
 {% load my_tags %}
-{% block title %} Список товаров {% endblock title %}
+{% block title %} Товары в категории {% endblock title %}
 {% block content %}
 
 <body>
-<div class="d-grid gap-2 d-md-flex justify-content-md-center">
-    <a class="btn btn-outline-success" href="{% url 'catalog:product_create'%}" role="button">Добавить товар</a>
-    <a class="btn btn-outline-success" href="{% url 'catalog:category_list'%}" role="button">Категории товара</a>
-</div>
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Товары в категории {{ category.name }}</h1>
+        <a href="{% url 'catalog:category_list' %}" class="btn btn-primary">Вернуться в Категории</a>
+    </div>
+  </div>
+</section>
 <div class="container">
     <div class="row text-center">
         {% for product in object_list %}
@@ -40,6 +44,5 @@
         {% endfor %}
     </div>
 </div>
-
 </body>
 {% endblock content %}

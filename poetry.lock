@@ -59,6 +59,16 @@ jupyter = ["ipython (>=7.8.0)", "tokenize-rt (>=3.2.0)"]
 uvloop = ["uvloop (>=0.15.2)"]
 
 [[package]]
+name = "cache"
+version = "1.0.3"
+description = "caching for humans"
+optional = false
+python-versions = "*"
+files = [
+    {file = "cache-1.0.3.tar.gz", hash = "sha256:ac063f2490c0794d5cf482bfff10b6339c441a6658f8f00fe653bd65b3ce85fb"},
+]
+
+[[package]]
 name = "click"
 version = "8.1.8"
 description = "Composable command line interface toolkit"
@@ -181,4 +191,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "7e9dcf12ae73e34181f62ea1fb7716437dc7dab713ddd4b6cb68c0ed5cea8ffe"
+content-hash = "2207053dea627dc37f4919e98c257707fb50d234f8fcfe35a03bc752588a2547"

@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 django = "^5.1.4"
+cache = "^1.0.3"
 
 
 [tool.poetry.group.lint.dependencies]

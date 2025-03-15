@@ -6,4 +6,6 @@ from blog.models import Blog
 class BlogForm(ModelForm):
     class Meta:
         model = Blog
-        exclude = ['counter',]
+        exclude = [
+            "counter",
+        ]
